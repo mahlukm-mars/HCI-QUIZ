@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-y: scroll;
+}
+
+/* Section Base Style */
+.section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+}
+
+/* Section 1: Hero */
+#hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    flex-direction: column;
+    position: relative;
+}
+
+.navbar {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #000 0%, #555 100%);
+    padding: 20px 40px;
+    border-radius: 50px;
+    display: flex;
+    gap: 40px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #00d4ff;
+}
+
+.hero-content h1 {
+    font-size: 80px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 5px;
+}
+
+/* Section 2: Dashboard Analytics */
+#analytics {
+    background: #f5f5f5;
+    padding: 0;
+    justify-content: flex-start;
+}
+
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(180deg, #2c2c2c 0%, #1a1a1a 100%);
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar li {
+    padding: 25px 40px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    transition: color 0.3s;
+}
+
+.sidebar a:hover {
+    color: #00d4ff;
+}
+
+.chart-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 50px;
+}
+
+.chart-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Section 3: Product Detail */
+#product-detail {
+    background: white;
+}
+
+.product-container {
+    display: flex;
+    gap: 60px;
+    max-width: 1000px;
+    padding: 40px;
+}
+
+.product-image {
+    flex: 1;
+}
+
+.product-image img {
+    width: 100%;
+    border: 10px solid #666;
+    padding: 20px;
+    background: white;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-info h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.stars {
+    color: #ffa500;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.quantity {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.qty-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    background: #d3d3d3;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.qty-number {
+    font-size: 24px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.add-to-cart {
+    width: 100%;
+    padding: 18px;
+    background: #0066cc;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.add-to-cart:hover {
+    background: #0052a3;
+}
+
+.description h3 {
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.description p {
+    margin-top: 10px;
+    color: #666;
+}
+
+/* Section 4: Form */
+#form {
+    background: #f5f5f5;
+}
+
+.form-container {
+    background: #b8b8b8;
+    padding: 50px 40px;
+    border-radius: 10px;
+    width: 400px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 25px;
+    border: none;
+    background: #d5d5d5;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Section 5: Accordion */
+#accordion {
+    background: white;
+}
+
+.accordion-container {
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.accordion-item {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    background: #d0d0d0;
+    padding: 25px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.accordion-item.active .accordion-header {
+    background: #5dbaed;
+    border-bottom: 3px solid #333;
+}
+
+.accordion-content {
+    background: #d0d0d0;
+    padding: 30px;
+    display: none;
+    font-size: 16px;
+}
+
+.accordion-item.active .accordion-content {
+    display: block;
+}
+
+/* Section 6: Product Grid */
+#product {
+    background: #f5f5f5;
+}
+
+.product-grid {
+    display: flex;
+    gap: 40px;
+}
+
+.product-card {
+    background: #c8c8c8;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 350px;
+    border: 4px solid transparent;
+}
+
+.product-card.active {
+    border-color: #7b3ff2;
+}
+
+.product-card img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+    background: white;
+    padding: 20px;
+    border: 8px solid #666;
+}
+
+.product-card h3 {
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+.product-card .price {
+    font-size: 22px;
+    margin: 15px 0;
+}
+
+.product-card .add-to-cart {
+    width: 100%;
+    margin: 0;
+}
+
+/* Section 7: Progress Bar */
+#progress {
+    background: white;
+}
+
+.progress-container {
+    width: 800px;
+}
+
+.progress-bar {
+    background: #c8c8c8;
+    height: 100px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 15px;
+}
+
+.progress-fill {
+    background: #5dbaed;
+    height: 100%;
+    width: 89%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
